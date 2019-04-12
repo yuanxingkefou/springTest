@@ -1,0 +1,11 @@
+XML配置下，实例化Bean有三种方法：
+1）采用一般的构造方法
+<bean id="userService" class="com.mq.base_XML.instanceBeanDemo.instanceBean01.UserServiceImpl(需要实现的Bean)"></bean>
+2）采用工厂的静态方法
+<bean id="userService" class="com.mq.base_XML.instanceBeanDemo.instanceBean02.MyFactory(工厂类)" factory-method="method"></bean>
+3）采用工厂的一般方法:需要先创建工厂类的Bean，在调用工厂类中的方法
+<bean id="userService" class="com.mq.base_XML.instanceBeanDemo.instanceBean03.UserServiceImpl"
+        factory-bean="myFactory" factory-method="method"></bean>
+
+ <!--工厂类-->
+ <bean id="myFactory" class="com.mq.base_XML.instanceBeanDemo.instanceBean03.MyFactory"></bean>

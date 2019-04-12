@@ -1,0 +1,24 @@
+@Component取代`<bean class="">`
+
+@Component("id")取代`<bean id="" class="">`
+
+在web开发中，提供了三个@Component衍生注解（功能一样）
+
+* dao:@Repository
+* service:@Service
+* web:@Controller
+
+依赖注入(私有字段，setter方法)：
+
+* 普通值：@Value()
+* 引用值：
+    * 方式一：按照类型注入@Autowired
+    * 方式二：按照名称注入@Autowired  @Qualifier("名称")
+    * 方式三：按照名称注入@Resource("名称")
+    
+生命周期：
+
+* 初始化   @PostConstruct
+* 销毁    @PreDestroy
+
+作用域：@Scope()

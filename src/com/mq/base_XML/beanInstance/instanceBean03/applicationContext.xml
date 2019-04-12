@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--通过实例工厂来实例化类-->
+    <bean id="userService" class="com.mq.base_XML.beanInstance.instanceBean03.UserServiceImpl"
+        factory-bean="myFactory" factory-method="method"></bean>
+
+    <!--工厂类-->
+    <bean id="myFactory" class="com.mq.base_XML.beanInstance.instanceBean03.MyFactory"></bean>
+</beans>

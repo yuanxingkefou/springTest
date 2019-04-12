@@ -1,0 +1,27 @@
+**Spring Bean的生命周期**
+
+* 实例化Bean
+
+* 设置对象属性（依赖注入）
+
+* 处理Aware接口
+
+* BeanPostProcessor(后置处理器)
+
+    是AOP的底层原理
+    
+    ```
+    A a=new A();
+    //将a的实例对象传递给后台代理B，生成一个代理对象返回给A
+    a=B.before(a);
+    A.init();
+    a=B.after(a);
+    A.method();
+    A.destroy();
+
+
+* InitializingBean和init-method
+
+* DisposableBean（通过Ioc调用Bean）
+
+* destroy-method

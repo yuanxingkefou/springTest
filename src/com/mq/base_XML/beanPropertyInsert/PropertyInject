@@ -1,0 +1,49 @@
+**属性注入的方式**
+
+* 构造器注入
+    ```
+    <!--counstructor注入-->
+        <bean id="person" class="com.mq.base_XML.beanPropertyInsert.constructor.Person">
+            <constructor-arg index="0" value="John"></constructor-arg>
+            <constructor-arg index="1" ref="homeAddr"></constructor-arg>
+            <constructor-arg index="2" ref="comAddr"></constructor-arg>
+        </bean>
+    
+        <bean id="homeAddr" class="com.mq.base_XML.beanPropertyInsert.constructor.Address">
+            <constructor-arg index="0" value="Los"></constructor-arg>
+            <constructor-arg index="1" value="US"></constructor-arg>
+        </bean>
+    
+        <bean id="comAddr" class="com.mq.base_XML.beanPropertyInsert.constructor.Address">
+            <constructor-arg index="0" value="Hong Kong"></constructor-arg>
+            <constructor-arg index="1" value="China"></constructor-arg>
+        </bean>
+     ```
+     c命名空间   
+* setter方法注入
+    
+    ```
+     <bean id="person" class="com.mq.base_XML.beanPropertyInsert.Person">
+            <property name="name" value="John"></property>
+            <property name="homeAddr" ref="homeAddress"></property>
+            <property name="comAddr" ref="comAddress"></property>
+        </bean>
+    
+    
+        <bean id="homeAddress" class="com.mq.base_XML.beanPropertyInsert.Address">
+            <property name="city" value="New York">
+            </property>
+            <property name="country" value="The United States"></property>
+        </bean>
+    
+        <bean id="comAddress" class="com.mq.base_XML.beanPropertyInsert.Address">
+            <property name="country" value="China">
+            </property>
+            <property name="city" value="Beijing">
+            </property>
+        </bean>
+     ```
+    p命名空间
+    
+    集合注入
+* 接口注入
